@@ -17,12 +17,12 @@ TagManager:
   - Tile
   - 
   - Enemy
+  - Defenders
+  - Buildings
   - 
+  - PlayerScope
   - 
-  - 
-  - 
-  - 
-  - 
+  - TileContactDetector
   - 
   - 
   - 

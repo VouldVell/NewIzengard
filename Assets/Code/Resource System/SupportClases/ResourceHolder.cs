@@ -21,7 +21,7 @@
         
         public bool CheckAmount(int value)
         {
-           return _currentAmount <= value;
+           return _currentAmount >= value;
         } 
 
         public void AddResource(int value)
@@ -35,6 +35,18 @@
         public void RemoveResource(int value)
         {
             _currentAmount -= value;
+        }
+
+        public bool IsTypeEquals(ResourceType resourceType)
+        {
+            if (resourceType == _resourceType)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 1336412635008817165}
   - component: {fileID: 5193281545446267849}
   - component: {fileID: 3138271638523715361}
+  - component: {fileID: 4910908791895047864}
+  - component: {fileID: 2464048748739680137}
   - component: {fileID: 7907001591370055359}
   m_Layer: 8
   m_Name: Tank
@@ -32,7 +34,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
-  - {fileID: 4569020435948024936}
+  - {fileID: 5356755731393234327}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -105,7 +107,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1548683655444547302}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 1
@@ -120,6 +122,38 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!54 &4910908791895047864
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548683655444547302}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &2464048748739680137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548683655444547302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff
 --- !u!114 &7907001591370055359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,8 +167,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _icon: {fileID: 0}
-  _towerShotConfig: {fileID: 11400000, guid: 434693b8852395646991acdccd102705, type: 2}
---- !u!1 &8411984276690874464
+  _maxCountAttackers: 5
+  _threatLevel: 8
+--- !u!1 &8674904657542906414
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,23 +177,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4569020435948024936}
-  - component: {fileID: 3846169640413649017}
-  - component: {fileID: 5902197655031335880}
-  m_Layer: 8
-  m_Name: SearchScope
+  - component: {fileID: 5356755731393234327}
+  - component: {fileID: 3865576567943136896}
+  - component: {fileID: 1932571845044348650}
+  m_Layer: 14
+  m_Name: TileContactDetecterTank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4569020435948024936
+--- !u!4 &5356755731393234327
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8411984276690874464}
+  m_GameObject: {fileID: 8674904657542906414}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -166,28 +201,28 @@ Transform:
   m_Father: {fileID: 6309099205112894250}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &3846169640413649017
+--- !u!135 &3865576567943136896
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8411984276690874464}
+  m_GameObject: {fileID: 8674904657542906414}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5902197655031335880
+--- !u!114 &1932571845044348650
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8411984276690874464}
+  m_GameObject: {fileID: 8674904657542906414}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c16df9c4c2dd6749858bcf5f1f42e83, type: 3}
+  m_Script: {fileID: 11500000, guid: d083a8990adb4fc48668d418bdca3711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
